@@ -22,18 +22,13 @@
         var pembagi = document.getElementById("pembagi").value;
         var pertama = document.getElementById("test").value;
         var array_awal = pertama.split("\n");
-        // var hasil = [];
         var hasil1 = "";
         var hasil2 = "";
         for (var i = 0; i < array_awal.length; i++) {
           var array_baru = array_awal[i].split(pembagi);
-          //   hasil.push(array_baru);
           hasil1 += array_baru[0] + "\n";
           hasil2 += array_baru[1] + "\n";
-          //   console.log(array_baru);
-          //   document.write("test</br>");
         }
-        console.log(hasil1);
         document.getElementById("test2").value = hasil1;
         document.getElementById("test3").value = hasil2;
       }
