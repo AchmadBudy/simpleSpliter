@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Test test doang</title>
+  </head>
+  <body>
+    <h1>Test Splitter</h1>
+    <textarea name="test" id="test" cols="60" rows="10"></textarea>
+
+    <label for="pembagi">pilih pembaginya:</label>
+    <input type="text" id="pembagi" value="|" />
+    <button onclick="myFunction()">Try it</button>
+    <h1>Hasilnya 1</h1>
+    <textarea name="test2" id="test2" cols="60" rows="10"></textarea>
+    <button onclick="copi()">Copy</button>
+    <h1>Hasilnya 2</h1>
+    <textarea name="test3" id="test3" cols="60" rows="10"></textarea>
+    <button onclick="copis()">Copy</button>
+    <script>
+      function myFunction() {
+        var pembagi = document.getElementById("pembagi").value;
+        var pertama = document.getElementById("test").value;
+        var array_awal = pertama.split("\n");
+        // var hasil = [];
+        var hasil1 = "";
+        var hasil2 = "";
+        for (var i = 0; i < array_awal.length; i++) {
+          var array_baru = array_awal[i].split(pembagi);
+          //   hasil.push(array_baru);
+          hasil1 += array_baru[0] + "\n";
+          hasil2 += array_baru[1] + "\n";
+          //   console.log(array_baru);
+          //   document.write("test</br>");
+        }
+        console.log(hasil1);
+        document.getElementById("test2").value = hasil1;
+        document.getElementById("test3").value = hasil2;
+      }
+      function copi() {
+        var copyText = document.getElementById("test2");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999999999);
+        document.execCommand("copy");
+      }
+      function copis() {
+        var copyText = document.getElementById("test3");
+        copyText.select();
+        copyText.setSelectionRange(0, 9999999999);
+        document.execCommand("copy");
+      }
+    </script>
+  </body>
+</html>
